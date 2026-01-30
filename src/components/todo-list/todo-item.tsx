@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
-const TodoItem = ({ id, content }: { id: number; content: string }) => {
+import { useDeleteTodos } from "@/store/todos";
+import type { Todo } from "@/types";
+const TodoItem = ({ id, content }: Todo) => {
+	const deleteTodo = useDeleteTodos();
+	const handleDeleteClick = () => {
+		deleteTodo(id);
+	};
 
 	return (
 		<div className="flex items-center justify-between border p-2">
 			{content}
-			<Button variant={"destructive"}>삭제</Button>
+			<Button variant={"destructive"} onClick={handleDeleteClick}>
+				삭제
+			</Button>
 		</div>
 	);
 };
