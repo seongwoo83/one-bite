@@ -5,10 +5,10 @@ import { useTodosData } from "@/hooks/queries/useTodos.data";
 import { useQuery } from "@tanstack/react-query";
 
 const TodoListPage = () => {
-	const { data: todos, isLoading, error } = useTodosData
+	const { data: todos, isLoading, error } = useTodosData();
 
-	if (error) return <div>오류 발생</div>
-	if (isLoading) return <div>로딩중입니다...</div>
+	if (error) return <div>오류 발생</div>;
+	if (isLoading) return <div>로딩중입니다...</div>;
 
 	return (
 		<div className="flex flex-col gap-5 p-5">
