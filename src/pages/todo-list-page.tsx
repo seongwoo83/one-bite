@@ -2,7 +2,6 @@ import { fetchTodos } from "@/api/fetch-todos";
 import TodoEditor from "@/components/todo-list/todo-editor";
 import TodoItem from "@/components/todo-list/todo-item";
 import { useTodosData } from "@/hooks/queries/useTodos.data";
-import { useQuery } from "@tanstack/react-query";
 
 const TodoListPage = () => {
 	const { data: todos, isLoading, error } = useTodosData();
